@@ -1,0 +1,891 @@
+@media (max-width:500px) {
+    :root {
+        --board-Line-Color:rgb(50, 50, 50);
+    }
+    
+    body {
+        overflow:hidden;
+    }
+    
+    #x-o-Board-Container {
+        width:calc(100vw - 50px);
+        max-width:500px;
+        height:calc(100vw - 50px);
+        max-height:500px;
+        border:none;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    #h-Line-One {
+        width:5px;
+        height:100%;
+        background:var(--board-Line-Color);
+        position:absolute;
+        left:calc(100% / 3);
+        border-radius: 100px;
+    }
+    
+    #h-Line-Two {
+        width:5px;
+        height:100%;
+        background:var(--board-Line-Color);
+        position:absolute;
+        left:calc((100% / 3) * 2);
+        border-radius: 100px;
+    }
+    
+    #v-Line-One {
+        width:100%;
+        height:5px;
+        background:var(--board-Line-Color);
+        position:absolute;
+        top:calc(100% / 3);
+        border-radius: 100px;
+    }
+    
+    #v-Line-Two {
+        width:100%;
+        height:5px;
+        background:var(--board-Line-Color);
+        position:absolute;
+        top:calc((100% / 3) * 2);
+        border-radius: 100px;
+    }
+    
+    .mini-Section-Open {
+        position:absolute;
+        border:none;
+        width:calc((100% / 3) - 7.5px);
+        height:calc((100% / 3) - 7.5px);
+        background:transparent;
+        opacity: 0.1;
+    }
+    
+    .mini-Section-Open:hover {
+        cursor: pointer;
+    }
+    
+    #zero {
+        top:5px;
+        left:5px;
+    }
+    
+    #one {
+        top:2.5px;
+        left:calc((100% / 3) + 5px);
+    }
+    
+    #two {
+        top:5px;
+        left:calc(((100% / 3) * 2) + 5px);
+    }
+    
+    #three {
+        top:calc((100% / 3) + 5px);
+        left:5px;
+    }
+    
+    #four {
+        top:calc((100% / 3) + 5px);
+        left:calc((100% / 3) + 5px);
+    }
+    
+    #five {
+        top:calc((100% / 3) + 5px);
+        left:calc(((100% / 3) * 2) + 5px);
+    }
+    
+    #six {
+        top:calc(((100% / 3) * 2) + 5px);
+        left:5px;
+    }
+    
+    #seven {
+        top:calc(((100% / 3) * 2) + 5px);
+        left:calc((100% / 3) + 5px);
+    }
+    
+    #eight {
+        top:calc(((100% / 3) * 2) + 5px);
+        left:calc(((100% / 3) * 2) + 5px);
+    }
+    
+    .h-Line-One {
+        width:5px;
+        height:calc(100% - 25px);
+        background:var(--board-Line-Color);
+        position:absolute;
+        top:50%;
+        transform: translate(0px, -50%);
+        left:calc(100% / 3);
+        border-radius: 100px;
+    }
+    
+    
+    .h-Line-Two {
+        width:5px;
+        height:calc(100% - 25px);
+        background:var(--board-Line-Color);
+        position:absolute;
+        top:50%;
+        transform: translate(0px, -50%);
+        left:calc((100% / 3) * 2);
+        border-radius: 100px;
+    }
+    
+    
+    .v-Line-One {
+        width:calc(100% - 25px);
+        height:5px;
+        background:var(--board-Line-Color);
+        position:absolute;
+        left:50%;
+        transform: translate(-50%);
+        top:calc(100% / 3);
+        border-radius: 100px;
+    }
+    
+    .v-Line-Two {
+        width:calc(100% - 25px);
+        height:5px;
+        background:var(--board-Line-Color);
+        position:absolute;
+        left:50%;
+        transform: translate(-50%);
+        top:calc((100% / 3) * 2);
+        border-radius: 100px;
+    }
+    
+    .place-Markers-Container {
+        width:calc(100% - 25px);
+        position:relative;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height:calc(100% - 25px);
+        background: transparent;
+        display: grid;
+        gap:15px;
+        grid-template-columns: auto auto auto;
+    }
+    
+    .place-Markers-Container:hover {
+        cursor:default;
+    }
+    
+    .place-Marker {
+        width:calc(100%);
+        height:calc(100%);
+        margin-top: -10px;
+        margin-left: 5px;
+        background:transparent;
+        position: relative;
+    }
+    
+    .place-Marker:hover {
+        cursor: pointer;
+    }
+    
+    .x {
+        transition: 1s;
+        color: blue;
+        font-size: 500%;
+        position: absolute;
+        margin-top: 0px;
+        margin-left: -1px;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    
+    .x.fullScreen {
+        transition: 1s;
+        color: blue;
+        font-size: 1000%;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    
+    .o {
+        transition: 1s;
+        width:10px;
+        height:10px;
+        border:5px solid red;
+        border-radius: 100%;
+        position: absolute;
+        margin-top: -1.5px;
+        margin-left: -2.5px;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .o.fullScreen {
+        transition: 1s;
+        width:10px;
+        height:10px;
+        border: 10px solid red;
+        border-radius: 100%;
+        position: absolute;
+        margin-top: -5px;
+        margin-left: -5px;
+        padding: 15px;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    #final-Game-Result-Holder {
+        width:calc(100vw - 50px);
+        max-width:500px;
+        height:calc(100vw - 50px);
+        max-height:500px;
+        border:none;
+        position: absolute;
+        background-color: transparent;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .win-Lose-Tie-Container {
+        width:100%;
+        position:relative;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height:100%;
+        background: transparent;
+        display: grid;
+        /* gap:15px; */
+        margin-top: 12px;
+        grid-template-columns: auto auto auto;
+    }
+    
+    .game-Result-Holder {
+        width:100%;
+        height:100%;
+        margin-top: -10px;
+        margin-left: 5px;
+        background:transparent;
+        position: relative;
+    }
+    
+    .tie-Container {
+        width:100%;
+        height:100%;
+        display:flex;
+        background:transparent;
+        position: relative;
+        transform: rotate(-45deg);
+    }
+    
+    .x-Holder {
+        width:50%;
+        height:100%;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .o-Holder {
+        width:50%;
+        height:100%;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .x-Main-Tie {
+        color: blue;
+        font-size:1000%;
+        font-weight: 600;
+        position: absolute;
+        margin-top: 0px;
+        margin-left: -1px;
+        top:50%;
+        left:75%;
+        transform: translate(-40%, -50%) rotate(0deg);
+    }
+    
+    .x-Main {
+        color: blue;
+        font-size:1000%;
+        font-weight: 600;
+        position: absolute;
+        margin-top: 0px;
+        margin-left: -1px;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    
+    .o-Main-Tie {
+        width:20px;
+        height:20px;
+        border: 15px solid red;
+        border-radius: 100%;
+        position: absolute;
+        padding: 15px;
+        top:50%;
+        left:34%;
+        transform: translate(-75%, -50%);
+    }
+    
+    .o-Main {
+        width:20px;
+        height:20px;
+        border: 15px solid red;
+        border-radius: 100%;
+        position: absolute;
+        padding: 15px;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    
+    /* Animations */
+    @keyframes fullScreen {
+        50% {
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+        }
+    
+        100% {
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            width:100%;
+            height:100%;
+            z-index: 1;
+            opacity: 1;
+        }
+    }
+    
+    @keyframes getRidOfOtherGames {
+        0% {
+            opacity: 0.1;
+        }
+    
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    @keyframes getRidOfMainBoard {
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    @keyframes bringBackBoard {
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes bringBackOtherGames {
+        0% {
+            opacity: 0;
+        }
+    
+        100% {
+            opacity: 0.1;
+        }
+    }
+    
+    @keyframes exitFullScreen {
+        0% {
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            width:100%;
+            height:100%;
+            z-index: 1;
+            opacity: 1;
+        }
+    
+        100% {
+            width:calc(100vw - 50px);
+            max-width:500px;
+            height:calc(100vw - 50px);
+            max-height:500px;
+            border:none;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    
+    @keyframes hideGameResults {
+        0% {
+            opacity: 1;
+        }
+    
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    @keyframes showGameResults {
+        0% {
+            opacity: 0;
+        }
+    
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+@media (min-width:500px) {
+    :root {
+        --board-Line-Color:rgb(50, 50, 50);
+    }
+    
+    body {
+        overflow:hidden;
+    }
+    
+    #x-o-Board-Container {
+        width:calc(100vw - 50px);
+        max-width:500px;
+        height:calc(100vw - 50px);
+        max-height:500px;
+        border:none;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    #h-Line-One {
+        width:5px;
+        height:100%;
+        background:var(--board-Line-Color);
+        position:absolute;
+        left:calc(100% / 3);
+        border-radius: 100px;
+    }
+    
+    #h-Line-Two {
+        width:5px;
+        height:100%;
+        background:var(--board-Line-Color);
+        position:absolute;
+        left:calc((100% / 3) * 2);
+        border-radius: 100px;
+    }
+    
+    #v-Line-One {
+        width:100%;
+        height:5px;
+        background:var(--board-Line-Color);
+        position:absolute;
+        top:calc(100% / 3);
+        border-radius: 100px;
+    }
+    
+    #v-Line-Two {
+        width:100%;
+        height:5px;
+        background:var(--board-Line-Color);
+        position:absolute;
+        top:calc((100% / 3) * 2);
+        border-radius: 100px;
+    }
+    
+    .mini-Section-Open {
+        position:absolute;
+        border:none;
+        width:calc((100% / 3) - 7.5px);
+        height:calc((100% / 3) - 7.5px);
+        background:transparent;
+        opacity: 0.1;
+    }
+    
+    .mini-Section-Open:hover {
+        cursor: pointer;
+    }
+    
+    #zero {
+        top:5px;
+        left:5px;
+    }
+    
+    #one {
+        top:2.5px;
+        left:calc((100% / 3) + 5px);
+    }
+    
+    #two {
+        top:5px;
+        left:calc(((100% / 3) * 2) + 5px);
+    }
+    
+    #three {
+        top:calc((100% / 3) + 5px);
+        left:5px;
+    }
+    
+    #four {
+        top:calc((100% / 3) + 5px);
+        left:calc((100% / 3) + 5px);
+    }
+    
+    #five {
+        top:calc((100% / 3) + 5px);
+        left:calc(((100% / 3) * 2) + 5px);
+    }
+    
+    #six {
+        top:calc(((100% / 3) * 2) + 5px);
+        left:5px;
+    }
+    
+    #seven {
+        top:calc(((100% / 3) * 2) + 5px);
+        left:calc((100% / 3) + 5px);
+    }
+    
+    #eight {
+        top:calc(((100% / 3) * 2) + 5px);
+        left:calc(((100% / 3) * 2) + 5px);
+    }
+    
+    .h-Line-One {
+        width:5px;
+        height:calc(100% - 25px);
+        background:var(--board-Line-Color);
+        position:absolute;
+        top:50%;
+        transform: translate(0px, -50%);
+        left:calc(100% / 3);
+        border-radius: 100px;
+    }
+    
+    
+    .h-Line-Two {
+        width:5px;
+        height:calc(100% - 25px);
+        background:var(--board-Line-Color);
+        position:absolute;
+        top:50%;
+        transform: translate(0px, -50%);
+        left:calc((100% / 3) * 2);
+        border-radius: 100px;
+    }
+    
+    
+    .v-Line-One {
+        width:calc(100% - 25px);
+        height:5px;
+        background:var(--board-Line-Color);
+        position:absolute;
+        left:50%;
+        transform: translate(-50%);
+        top:calc(100% / 3);
+        border-radius: 100px;
+    }
+    
+    .v-Line-Two {
+        width:calc(100% - 25px);
+        height:5px;
+        background:var(--board-Line-Color);
+        position:absolute;
+        left:50%;
+        transform: translate(-50%);
+        top:calc((100% / 3) * 2);
+        border-radius: 100px;
+    }
+    
+    .place-Markers-Container {
+        width:calc(100% - 25px);
+        position:relative;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height:calc(100% - 25px);
+        background: transparent;
+        display: grid;
+        gap:15px;
+        grid-template-columns: auto auto auto;
+    }
+    
+    .place-Markers-Container:hover {
+        cursor:default;
+    }
+    
+    .place-Marker {
+        width:calc(100%);
+        height:calc(100%);
+        margin-top: -10px;
+        margin-left: 5px;
+        background:transparent;
+        position: relative;
+    }
+    
+    .place-Marker:hover {
+        cursor: pointer;
+    }
+    
+    .x {
+        transition: 1s;
+        color: blue;
+        font-size: 500%;
+        position: absolute;
+        margin-top: 0px;
+        margin-left: -1px;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    
+    .x.fullScreen {
+        transition: 1s;
+        color: blue;
+        font-size: 1500%;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    
+    .o {
+        transition: 1s;
+        width:20px;
+        height:20px;
+        border:5px solid red;
+        border-radius: 100%;
+        position: absolute;
+        margin-top: -1.5px;
+        margin-left: -2.5px;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .o.fullScreen {
+        transition: 1s;
+        width:30px;
+        height:30px;
+        border: 15px solid red;
+        border-radius: 100%;
+        position: absolute;
+        margin-top: -5px;
+        margin-left: -5px;
+        padding: 15px;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    #final-Game-Result-Holder {
+        width:calc(100vw - 50px);
+        max-width:500px;
+        height:calc(100vw - 50px);
+        max-height:500px;
+        border:none;
+        position: absolute;
+        background-color: transparent;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .win-Lose-Tie-Container {
+        width:100%;
+        position:relative;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height:100%;
+        background: transparent;
+        display: grid;
+        /* gap:15px; */
+        margin-top: 12px;
+        grid-template-columns: auto auto auto;
+    }
+    
+    .game-Result-Holder {
+        width:100%;
+        height:100%;
+        margin-top: -10px;
+        margin-left: 5px;
+        background:transparent;
+        position: relative;
+    }
+    
+    .tie-Container {
+        width:100%;
+        height:100%;
+        display:flex;
+        background:transparent;
+        position: relative;
+        transform: rotate(-45deg);
+    }
+    
+    .x-Holder {
+        width:50%;
+        height:100%;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .o-Holder {
+        width:50%;
+        height:100%;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .x-Main-Tie {
+        color: blue;
+        font-size:1500%;
+        font-weight: 600;
+        position: absolute;
+        margin-top: 0px;
+        margin-left: -1px;
+        top:50%;
+        left:75%;
+        transform: translate(-40%, -50%) rotate(0deg);
+    }
+    
+    .x-Main {
+        color: blue;
+        font-size:1500%;
+        font-weight: 600;
+        position: absolute;
+        margin-top: 0px;
+        margin-left: -1px;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    
+    .o-Main-Tie {
+        width:40px;
+        height:40px;
+        border: 15px solid red;
+        border-radius: 100%;
+        position: absolute;
+        padding: 15px;
+        top:50%;
+        left:34%;
+        transform: translate(-75%, -50%);
+    }
+    
+    .o-Main {
+        width:40px;
+        height:40px;
+        border: 15px solid red;
+        border-radius: 100%;
+        position: absolute;
+        padding: 15px;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    
+    /* Animations */
+    @keyframes fullScreen {
+        50% {
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+        }
+    
+        100% {
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            width:100%;
+            height:100%;
+            z-index: 1;
+            opacity: 1;
+        }
+    }
+    
+    @keyframes getRidOfOtherGames {
+        0% {
+            opacity: 0.1;
+        }
+    
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    @keyframes getRidOfMainBoard {
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    @keyframes bringBackBoard {
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes bringBackOtherGames {
+        0% {
+            opacity: 0;
+        }
+    
+        100% {
+            opacity: 0.1;
+        }
+    }
+    
+    @keyframes exitFullScreen {
+        0% {
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            width:100%;
+            height:100%;
+            z-index: 1;
+            opacity: 1;
+        }
+    
+        100% {
+            width:calc(100vw - 50px);
+            max-width:500px;
+            height:calc(100vw - 50px);
+            max-height:500px;
+            border:none;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    
+    @keyframes hideGameResults {
+        0% {
+            opacity: 1;
+        }
+    
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    @keyframes showGameResults {
+        0% {
+            opacity: 0;
+        }
+    
+        100% {
+            opacity: 1;
+        }
+    }
+}

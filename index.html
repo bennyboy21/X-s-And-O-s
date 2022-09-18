@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>X's & O's</title>
+</head>
+<body>
+    <div id="x-o-Board-Container">
+        <div id="final-Game-Result-Holder">
+            <div class="win-Lose-Tie-Container">
+                <div class="game-Result-Holder" id="game-Result-1"></div>
+                <div class="game-Result-Holder" id="game-Result-2"></div>
+                <div class="game-Result-Holder" id="game-Result-3"></div>
+                <div class="game-Result-Holder" id="game-Result-4"></div>
+                <div class="game-Result-Holder" id="game-Result-5"></div>
+                <div class="game-Result-Holder" id="game-Result-6"></div>
+                <div class="game-Result-Holder" id="game-Result-7"></div>
+                <div class="game-Result-Holder" id="game-Result-8"></div>
+                <div class="game-Result-Holder" id="game-Result-9"></div>
+            </div>
+            
+        </div>
+
+        <div id="h-Line-One"></div>
+        <div id="h-Line-Two"></div>
+        <div id="v-Line-One"></div>
+        <div id="v-Line-Two"></div>
+        
+        <button class="mini-Section-Open" id="zero" onclick="openMiniXOsGame('zero', 0)">
+            <div class="h-Line-One"></div>
+            <div class="h-Line-Two"></div>
+            <div class="v-Line-One"></div>
+            <div class="v-Line-Two"></div>
+
+            <div class="place-Markers-Container">
+                <div class="place-Marker" id="marker-One-One" onclick="placeMarker('marker-One-One', 0)"></div>
+                <div class="place-Marker" id="marker-Two-One" onclick="placeMarker('marker-Two-One', 1)"></div>
+                <div class="place-Marker" id="marker-Three-One" onclick="placeMarker('marker-Three-One', 2)"></div>
+                <div class="place-Marker" id="marker-Four-One" onclick="placeMarker('marker-Four-One', 3)"></div>
+                <div class="place-Marker" id="marker-Five-One" onclick="placeMarker('marker-Five-One', 4)"></div>
+                <div class="place-Marker" id="marker-Six-One" onclick="placeMarker('marker-Six-One', 5)"></div>
+                <div class="place-Marker" id="marker-Seven-One" onclick="placeMarker('marker-Seven-One', 6)"></div>
+                <div class="place-Marker" id="marker-Eight-One" onclick="placeMarker('marker-Eight-One', 7)"></div>
+                <div class="place-Marker" id="marker-Nine-One" onclick="placeMarker('marker-Nine-One', 8)"></div>
+            </div>
+        </button>
+        <button class="mini-Section-Open" id="one" onclick="openMiniXOsGame('one', 1)">
+            <div class="h-Line-One"></div>
+            <div class="h-Line-Two"></div>
+            <div class="v-Line-One"></div>
+            <div class="v-Line-Two"></div>
+
+            <div class="place-Markers-Container">
+                <div class="place-Marker" id="marker-One-Two" onclick="placeMarker('marker-One-Two', 0)"></div>
+                <div class="place-Marker" id="marker-Two-Two" onclick="placeMarker('marker-Two-Two', 1)"></div>
+                <div class="place-Marker" id="marker-Three-Two" onclick="placeMarker('marker-Three-Two', 2)"></div>
+                <div class="place-Marker" id="marker-Four-Two" onclick="placeMarker('marker-Four-Two', 3)"></div>
+                <div class="place-Marker" id="marker-Five-Two" onclick="placeMarker('marker-Five-Two', 4)"></div>
+                <div class="place-Marker" id="marker-Six-Two" onclick="placeMarker('marker-Six-Two', 5)"></div>
+                <div class="place-Marker" id="marker-Seven-Two" onclick="placeMarker('marker-Seven-Two', 6)"></div>
+                <div class="place-Marker" id="marker-Eight-Two" onclick="placeMarker('marker-Eight-Two', 7)"></div>
+                <div class="place-Marker" id="marker-Nine-Two" onclick="placeMarker('marker-Nine-Two', 8)"></div>
+            </div>
+        </button>
+        <button class="mini-Section-Open" id="two" onclick="openMiniXOsGame('two', 2)">
+            <div class="h-Line-One"></div>
+            <div class="h-Line-Two"></div>
+            <div class="v-Line-One"></div>
+            <div class="v-Line-Two"></div>
+
+            <div class="place-Markers-Container">
+                <div class="place-Marker" id="marker-One-Three" onclick="placeMarker('marker-One-Three', 0)"></div>
+                <div class="place-Marker" id="marker-Two-Three" onclick="placeMarker('marker-Two-Three', 1)"></div>
+                <div class="place-Marker" id="marker-Three-Three" onclick="placeMarker('marker-Three-Three', 2)"></div>
+                <div class="place-Marker" id="marker-Four-Three" onclick="placeMarker('marker-Four-Three', 3)"></div>
+                <div class="place-Marker" id="marker-Five-Three" onclick="placeMarker('marker-Five-Three', 4)"></div>
+                <div class="place-Marker" id="marker-Six-Three" onclick="placeMarker('marker-Six-Three', 5)"></div>
+                <div class="place-Marker" id="marker-Seven-Three" onclick="placeMarker('marker-Seven-Three', 6)"></div>
+                <div class="place-Marker" id="marker-Eight-Three" onclick="placeMarker('marker-Eight-Three', 7)"></div>
+                <div class="place-Marker" id="marker-Nine-Three" onclick="placeMarker('marker-Nine-Three', 8)"></div>
+            </div>
+        </button>
+        <button class="mini-Section-Open" id="three" onclick="openMiniXOsGame('three', 3)">
+            <div class="h-Line-One"></div>
+            <div class="h-Line-Two"></div>
+            <div class="v-Line-One"></div>
+            <div class="v-Line-Two"></div>
+
+            <div class="place-Markers-Container">
+                <div class="place-Marker" id="marker-One-Four" onclick="placeMarker('marker-One-Four', 0)"></div>
+                <div class="place-Marker" id="marker-Two-Four" onclick="placeMarker('marker-Two-Four', 1)"></div>
+                <div class="place-Marker" id="marker-Three-Four" onclick="placeMarker('marker-Three-Four', 2)"></div>
+                <div class="place-Marker" id="marker-Four-Four" onclick="placeMarker('marker-Four-Four', 3)"></div>
+                <div class="place-Marker" id="marker-Five-Four" onclick="placeMarker('marker-Five-Four', 4)"></div>
+                <div class="place-Marker" id="marker-Six-Four" onclick="placeMarker('marker-Six-Four', 5)"></div>
+                <div class="place-Marker" id="marker-Seven-Four" onclick="placeMarker('marker-Seven-Four', 6)"></div>
+                <div class="place-Marker" id="marker-Eight-Four" onclick="placeMarker('marker-Eight-Four', 7)"></div>
+                <div class="place-Marker" id="marker-Nine-Four" onclick="placeMarker('marker-Nine-Four', 8)"></div>
+            </div>
+        </button>
+        <button class="mini-Section-Open" id="four" onclick="openMiniXOsGame('four', 4)">
+            <div class="h-Line-One"></div>
+            <div class="h-Line-Two"></div>
+            <div class="v-Line-One"></div>
+            <div class="v-Line-Two"></div>
+
+            <div class="place-Markers-Container">
+                <div class="place-Marker" id="marker-One-Five" onclick="placeMarker('marker-One-Five', 0)"></div>
+                <div class="place-Marker" id="marker-Two-Five" onclick="placeMarker('marker-Two-Five', 1)"></div>
+                <div class="place-Marker" id="marker-Three-Five" onclick="placeMarker('marker-Three-Five', 2)"></div>
+                <div class="place-Marker" id="marker-Four-Five" onclick="placeMarker('marker-Four-Five', 3)"></div>
+                <div class="place-Marker" id="marker-Five-Five" onclick="placeMarker('marker-Five-Five', 4)"></div>
+                <div class="place-Marker" id="marker-Six-Five" onclick="placeMarker('marker-Six-Five', 5)"></div>
+                <div class="place-Marker" id="marker-Seven-Five" onclick="placeMarker('marker-Seven-Five', 6)"></div>
+                <div class="place-Marker" id="marker-Eight-Five" onclick="placeMarker('marker-Eight-Five', 7)"></div>
+                <div class="place-Marker" id="marker-Nine-Five" onclick="placeMarker('marker-Nine-Five', 8)"></div>
+            </div>
+        </button>
+        <button class="mini-Section-Open" id="five" onclick="openMiniXOsGame('five', 5)">
+            <div class="h-Line-One"></div>
+            <div class="h-Line-Two"></div>
+            <div class="v-Line-One"></div>
+            <div class="v-Line-Two"></div>
+
+            <div class="place-Markers-Container">
+                <div class="place-Marker" id="marker-One-Six" onclick="placeMarker('marker-One-Six', 0)"></div>
+                <div class="place-Marker" id="marker-Two-Six" onclick="placeMarker('marker-Two-Six', 1)"></div>
+                <div class="place-Marker" id="marker-Three-Six" onclick="placeMarker('marker-Three-Six', 2)"></div>
+                <div class="place-Marker" id="marker-Four-Six" onclick="placeMarker('marker-Four-Six', 3)"></div>
+                <div class="place-Marker" id="marker-Five-Six" onclick="placeMarker('marker-Five-Six', 4)"></div>
+                <div class="place-Marker" id="marker-Six-Six" onclick="placeMarker('marker-Six-Six', 5)"></div>
+                <div class="place-Marker" id="marker-Seven-Six" onclick="placeMarker('marker-Seven-Six', 6)"></div>
+                <div class="place-Marker" id="marker-Eight-Six" onclick="placeMarker('marker-Eight-Six', 7)"></div>
+                <div class="place-Marker" id="marker-Nine-Six" onclick="placeMarker('marker-Nine-Six', 8)"></div>
+            </div>
+        </button>
+        <button class="mini-Section-Open" id="six" onclick="openMiniXOsGame('six', 6)">
+            <div class="h-Line-One"></div>
+            <div class="h-Line-Two"></div>
+            <div class="v-Line-One"></div>
+            <div class="v-Line-Two"></div>
+
+            <div class="place-Markers-Container">
+                <div class="place-Marker" id="marker-One-Seven" onclick="placeMarker('marker-One-Seven', 0)"></div>
+                <div class="place-Marker" id="marker-Two-Seven" onclick="placeMarker('marker-Two-Seven', 1)"></div>
+                <div class="place-Marker" id="marker-Three-Seven" onclick="placeMarker('marker-Three-Seven', 2)"></div>
+                <div class="place-Marker" id="marker-Four-Seven" onclick="placeMarker('marker-Four-Seven', 3)"></div>
+                <div class="place-Marker" id="marker-Five-Seven" onclick="placeMarker('marker-Five-Seven', 4)"></div>
+                <div class="place-Marker" id="marker-Six-Seven" onclick="placeMarker('marker-Six-Seven', 5)"></div>
+                <div class="place-Marker" id="marker-Seven-Seven" onclick="placeMarker('marker-Seven-Seven', 6)"></div>
+                <div class="place-Marker" id="marker-Eight-Seven" onclick="placeMarker('marker-Eight-Seven', 7)"></div>
+                <div class="place-Marker" id="marker-Nine-Seven" onclick="placeMarker('marker-Nine-Seven', 8)"></div>
+            </div>
+        </button>
+        <button class="mini-Section-Open" id="seven" onclick="openMiniXOsGame('seven', 7)">
+            <div class="h-Line-One"></div>
+            <div class="h-Line-Two"></div>
+            <div class="v-Line-One"></div>
+            <div class="v-Line-Two"></div>
+            
+            <div class="place-Markers-Container">
+                <div class="place-Marker" id="marker-One-Eight" onclick="placeMarker('marker-One-Eight', 0)"></div>
+                <div class="place-Marker" id="marker-Two-Eight" onclick="placeMarker('marker-Two-Eight', 1)"></div>
+                <div class="place-Marker" id="marker-Three-Eight" onclick="placeMarker('marker-Three-Eight', 2)"></div>
+                <div class="place-Marker" id="marker-Four-Eight" onclick="placeMarker('marker-Four-Eight', 3)"></div>
+                <div class="place-Marker" id="marker-Five-Eight" onclick="placeMarker('marker-Five-Eight', 4)"></div>
+                <div class="place-Marker" id="marker-Six-Eight" onclick="placeMarker('marker-Six-Eight', 5)"></div>
+                <div class="place-Marker" id="marker-Seven-Eight" onclick="placeMarker('marker-Seven-Eight', 6)"></div>
+                <div class="place-Marker" id="marker-Eight-Eight" onclick="placeMarker('marker-Eight-Eight', 7)"></div>
+                <div class="place-Marker" id="marker-Nine-Eight" onclick="placeMarker('marker-Nine-Eight', 8)"></div>
+            </div>
+        </button>
+        <button class="mini-Section-Open" id="eight" onclick="openMiniXOsGame('eight', 8)">
+            <div class="h-Line-One"></div>
+            <div class="h-Line-Two"></div>
+            <div class="v-Line-One"></div>
+            <div class="v-Line-Two"></div>
+
+            <div class="place-Markers-Container">
+                <div class="place-Marker" id="marker-One-Nine" onclick="placeMarker('marker-One-Nine', 0)"></div>
+                <div class="place-Marker" id="marker-Two-Nine" onclick="placeMarker('marker-Two-Nine', 1)"></div>
+                <div class="place-Marker" id="marker-Three-Nine" onclick="placeMarker('marker-Three-Nine', 2)"></div>
+                <div class="place-Marker" id="marker-Four-Nine" onclick="placeMarker('marker-Four-Nine', 3)"></div>
+                <div class="place-Marker" id="marker-Five-Nine" onclick="placeMarker('marker-Five-Nine', 4)"></div>
+                <div class="place-Marker" id="marker-Six-Nine" onclick="placeMarker('marker-Six-Nine', 5)"></div>
+                <div class="place-Marker" id="marker-Seven-Nine" onclick="placeMarker('marker-Seven-Nine', 6)"></div>
+                <div class="place-Marker" id="marker-Eight-Nine" onclick="placeMarker('marker-Eight-Nine', 7)"></div>
+                <div class="place-Marker" id="marker-Nine-Nine" onclick="placeMarker('marker-Nine-Nine', 8)"></div>
+            </div>
+        </button>
+    </div>
+</body>
+</html>
